@@ -15,11 +15,11 @@ export class NewsItem extends Component {
     return (
         <div>
         <div className="card my-3" style={style}>
-            <img src={imageUrl?imageUrl:"https://www.dreamstime.com/stock-photo-news-newspapers-folded-stacked-word-wooden-block-puzzle-dice-concept-newspaper-media-press-release-image42301371"} className="card-img-top" alt="..." />
+            <img src={imageUrl} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
-                <a href={newsUrl} target='_blank' className="btn btn-sm btn-primary">Read More</a>
+                <a href={newsUrl} rel="noreferrer" target='_blank' className="btn btn-sm btn-primary">Read More</a>
             </div>
         </div>
       </div>
