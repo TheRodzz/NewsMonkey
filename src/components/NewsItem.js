@@ -8,13 +8,10 @@ export class NewsItem extends Component {
 
   render() {
     let {title,description, imageUrl, newsUrl} = this.props;
-    const style = {
-        marginRight: '1em',
-
-      };
+    
     return (
         <div>
-        <div className="card my-3" style={style}>
+        <div className="card my-3" >
             <img src={imageUrl} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
