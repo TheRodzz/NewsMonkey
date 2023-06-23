@@ -24,7 +24,7 @@ export class News extends Component {
         }
     }
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=e24022a4b4a6456dbdc8456a8f281615&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -33,7 +33,7 @@ export class News extends Component {
 
 
     handleNextClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=e24022a4b4a6456dbdc8456a8f281615&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -41,7 +41,7 @@ export class News extends Component {
     }
 
     handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=e24022a4b4a6456dbdc8456a8f281615&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -51,7 +51,7 @@ export class News extends Component {
 
         return (
             <div className='container my-3'>
-                <h2 className='text-center'>NewsMonkey - Top headlines</h2>
+                <h2 className='text-center'>NewsMonkey - {this.props.title}</h2>
                 {this.state.loading && <Spinner />}
                 <div className='row'>
                     {!this.state.loading && this.state.articles.map((element) => {
