@@ -27,7 +27,7 @@ export default class App extends Component {
             </Route>
 
             <Route exact path="/Buisness">
-              <News key="business" pageSize={8} country='in' category='business' apikey={apikey} title='Business'/>
+              <News key="business" pageSize={8} country='us' category='business' apikey={apikey} title='Business'/>
             </Route>
             <Route exact path="/Entertainment">
               <News key="entertainment" pageSize={8} country='in' category='entertainment' apikey={apikey} title='Entertainment'/>
