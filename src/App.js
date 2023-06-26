@@ -18,7 +18,7 @@ export default class App extends Component {
     let apikey = '321bfbd1baaf4dfb82534a010cd0f716'
     return (
       <div>
-        <Router>
+        <Router basename="/NewsMonkey">
           <Navbar />
 
           <Switch>
